@@ -12,8 +12,11 @@ export class Routing extends Component {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/shop' element={<Shop/>}/>
-        <Route path='/cart' element={<Cart/>}/>
+        {/* <Route path='/cart' element={<Cart/>}/> */}
         <Route path='/home/:id' element={<ProductDetail/>}/>
+        <Route path='/pDetail/:id' element={<Cart/>}/>
+        
+      
       </Routes>
     )
   }

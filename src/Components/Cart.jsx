@@ -1,30 +1,34 @@
-import React, { useEffect, useState } from 'react'
-
+// import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { discoutProducts } from './AllData';
+// import { discoutProducts } from './AllData';
 
 const Cart = () => {
 
-  const [userData,setUserData]= useState([])
-  useEffect(()=>{
-  
-    fetchData()
-  },[])
-const fetchData = async ()=>{
-  const res = await fetch("https://jsonplaceholder.typicode.com/users")
-  const da = await res.json()
+  const {id} = useParams()
+  console.log(id);
 
-  setUserData(da)
-  console.log(da);
-  
-}
+  const [cartProduct] = discoutProducts.filter((ele)=>
+  ele.id=== id
+    )
+    console.log(cartProduct);
+    
+    
 
   return (
     <div>
         <h2>Cart</h2>
 
         {
-          userData && userData.map((e)=>(
-            <p key={e.id}>{e.name}</p>
-          ))
+          // cartProduct 
+        <div className="container">
+          <div className="row">
+            <div className='col-6'>
+              <img src={cartProduct.imgUrl} alt="" />
+              </div>
+              </div>
+              /</div>
+        
         }
 
 
