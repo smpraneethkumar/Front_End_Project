@@ -21,14 +21,15 @@ const Cart = () => {
 
         {
           // cartProduct 
+          cartProduct == 0 ? 
         <div className="container">
           <div className="row">
             <div className='col-6'>
               <img src={cartProduct.imgUrl} alt="" />
               </div>
               </div>
-              /</div>
-        
+              </div>
+        : <h2> your cart is empty</h2>
         }
 
 
