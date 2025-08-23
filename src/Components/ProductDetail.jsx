@@ -16,7 +16,7 @@ function ProductDetail() {
 
 
   )
-  let [{ rating, text }] = productName.reviews
+  let [{ rating }] = productName.reviews
   // console.log(rating);
 
   // console.log(productName.reviews);
