@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { discoutProducts } from './AllData';
+import { products } from './AllData';
 import table from "../assets/table.jpg"
 import { FaStar } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
@@ -11,12 +11,12 @@ function ProductDetail() {
   // console.log(id);
   // console.log(discoutProducts) 
 
-  const [productName] = discoutProducts.filter((ele) =>
+  const [productName] = products.filter((ele) =>
     ele.id === id
 
 
   )
-  let [{ rating }] = productName.reviews
+  let [{ rating  ,text}] = productName.reviews
   // console.log(rating);
 
   // console.log(productName.reviews);
