@@ -133,7 +133,8 @@ const Home = () => {
                                 <div className="card-body">
                                     <h3>{discount.productName}</h3>
                                     <p className="card-text"><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /><FaStar color='gold' /></p>
-                                    <span><h3>{discount.price}</h3><CiCirclePlus /></span>
+                                    <h3>{discount.price}  <CiCirclePlus /></h3>  
+                                    
                                 </div>
                               </div> 
                             
