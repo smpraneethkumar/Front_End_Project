@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { products } from './AllData';
 import table from "../assets/table.jpg"
 import { FaStar } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { add } from '../Redux/Slice';
 
 
 function ProductDetail() {
   const dispatch = useDispatch()
+
+  const [added,setAdded ] = useState(false)
 
   const { id } = useParams()
   // console.log(id);
@@ -31,7 +34,9 @@ function ProductDetail() {
   // }
 
   const handleAdd =(singlePro)=>{
-    dispatch
+    setAdded(true)
+    dispatch(add(singlePro))
+
   }
   return (
     <div>
@@ -60,7 +65,7 @@ function ProductDetail() {
             </span>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odit labore a fugiat voluptatibus nemo minus dolorum rerum quasi, </p>
             <input type="number" style={{width:"80px"}} id=""placeholder='1'  className='mt-3'/> <br/> 
-            <button className='btn btn-outline- btn-success mt-5'onClick={()=>{handleAdd(singlePro)}} >Add to Cart</button>
+            <button className='btn btn-outline- btn-success mt-5'onClick={()=>{handleAdd(singlePro)}} >{added ? "Adde`d":"Add to cart"}</button>
 
           </div>
         </div>

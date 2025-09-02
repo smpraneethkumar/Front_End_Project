@@ -1,10 +1,15 @@
 // import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { discoutProducts } from './AllData';
+import { useSelector } from 'react-redux';
 // import { discoutProducts } from './AllData';
+
 
 const Cart = () => {
 
+  const cartData = useSelector(state=> state.cart)
+  console.log(cartData);
+  
   const {id} = useParams()
   console.log(id);
 
