@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { add } from '../Redux/Slice';
 
-
+ 
 function ProductDetail() {
   const dispatch = useDispatch()
 
@@ -36,6 +36,7 @@ function ProductDetail() {
   const handleAdd =(singlePro)=>{
     setAdded(true)
     dispatch(add(singlePro))
+    
 
   }
   return (
@@ -65,7 +66,7 @@ function ProductDetail() {
             </span>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis odit labore a fugiat voluptatibus nemo minus dolorum rerum quasi, </p>
             <input type="number" style={{width:"80px"}} id=""placeholder='1'  className='mt-3'/> <br/> 
-            <button className='btn btn-outline- btn-success mt-5'onClick={()=>{handleAdd(singlePro)}} >{added ? "Adde`d":"Add to cart"}</button>
+            <button className='btn btn-outline- btn-success mt-5'onClick={()=>{handleAdd(singlePro)}} >{added ? "Added":"Add to cart"}</button>
 
           </div>
         </div>

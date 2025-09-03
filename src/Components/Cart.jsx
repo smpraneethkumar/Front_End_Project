@@ -1,18 +1,28 @@
 // import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { discoutProducts } from './AllData';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
+import { ImBin } from "react-icons/im";
+import { remove } from '../Redux/Slice';
 // import { discoutProducts } from './AllData';
 
 
 const Cart = () => {
+  const dispatch = useDispatch()
 
-  const cartData = useSelector(state=> state.cart)
+  const [cartData] = useSelector(state=> state.cart)
+
   // console.log(cartData);
   console.log(cartData);
+  // console.log("supers"+o);
   
+
+  
+  const handleRemove =(id)=>{
+    dispatch(remove(id))
+    
+    
+  }
 
   // const {id} = useParams()
   // console.log(id);
@@ -34,20 +44,24 @@ const Cart = () => {
           cartData && cartData.map((cart)=>(
            
          
-             <div className='d-flex gap-5'>
+             <div className='d-flex gap-5' key={cart.id}>
                <img style={{width:"20%",height:"40%"}} src={cart.imgUrl} alt="" />
                <h5>{cart.productName}</h5>
                <p>${cart.price} * 3 ${cart.price}</p>
 
                
                 <div>
-                <button type="button" class="btn btn-outline-primary btn-sm me  5"><FaPlus /></button>
-               <button type="button" class="btn btn-outline-primary btn-sm h-0 w-0"><FaMinus/></button> 
+                
+               <button type="button" className="btn btn-outline-danger btn-sm me-5"  onClick={()=>{handleRemove(cart.id)}}><ImBin/> </button> 
+
+                <button type="button" className="btn btn-outline-primary btn-sm me-5"><FaPlus /></button>
+               <button type="button" className="btn btn-outline-primary btn-sm "><FaMinus/></button> 
 
                 </div>
                    </div>
               
              
+
              
           ))  
         }

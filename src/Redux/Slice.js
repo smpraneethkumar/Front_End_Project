@@ -7,13 +7,23 @@ import { createSlice } from "@reduxjs/toolkit";
     reducers :{
         add(state, action){
             state.push(action.payload)
+        
             console.log(action);
             console.log(state);
             
             
         },
         remove(state, action){
+            state.push(action.payload)
+
             console.log(action);
+            state = state.filter((e)=> e.id !== action.payload)
+            console.log(state);
+
+
+            
+            
+            
             
         }
     }
