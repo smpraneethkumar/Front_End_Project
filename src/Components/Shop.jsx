@@ -8,6 +8,23 @@ const Shop = () => {
  
   return (
     <div>
+      <div className='d-flex justify-content-between  m-3'>
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter By Category
+  </button>
+  <ul class="dropdown-menu">y
+    <li><a class="dropdown-item" href="#">sofa</a></li>
+    <li><a class="dropdown-item" href="#">chair</a></li>
+    <li><a class="dropdown-item" href="#">watch</a></li>
+    <li><a class="dropdown-item" href="#">mobile</a></li>
+    <li><a class="dropdown-item" href="#">wireless</a></li>
+  </ul>
+</div>
+        <div className="col-sm-5">
+    <input type="text" className="form-control" placeholder="Search" aria-label="City"/>
+  </div>
+      </div>
       <div className="container">
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {

@@ -3,30 +3,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { ImBin } from "react-icons/im";
-import { remove } from '../Redux/Slice';
+import { remove,increment,decrement } from '../Redux/Slice';
 import { useState } from 'react';
 // import { discoutProducts } from './AllData';
 
 
 const Cart = () => {
+  // console.log(increment);
+  // console.log(decrement);
+  
+  
 
-  const [count , setCount] = useState(0)
+  // const [count , setCount] = useState(0)
 
-  const incrementHandler =()=>{
+  // const incrementHandler =()=>{
 
-    setCount(count + 1)
-  }
-  const decrementHandler =()=>{
-    setCount(count -1)
-  }
+  //   setCount(count + 1)
+  // }
+  // const decrementHandler =()=>{
+  //   setCount(count -1)
+  // }
   const dispatch = useDispatch()
 
   const cartData = useSelector(state=> state.cart)
 
   
-  // console.log(cartData);
-  // console.log(cartData.at(1));
-  // console.log("supers"+o);
+ 
   
 
   
@@ -53,6 +55,13 @@ const Cart = () => {
 
   
     
+    // console.log(cartData);
+    // console.log(cartData.qq);
+     const totalPrice = cartData.reduce((initialVal, currentObj)=>{
+    return initialVal + currentObj.price * currentObj.quantity
+  }, 0)
+  console.log(totalPrice);
+  
     
 
   return (
@@ -66,9 +75,10 @@ const Cart = () => {
              <div className='d-flex gap-5' key={cart.id}>
                <img style={{width:"20%",height:"40%"}} src={cart.imgUrl} alt="" />
                <h5>{cart.productName}</h5>
-               <p>${cart.price} * {count} ${count * cart.price}</p>
+               <p>${cart.price} * {cart.quantity} ${cart.price * cart.quantity}</p>
+               {/* <p>{cart.quantity+cart.price}</p> */}
 
-               
+              
                 <div>
                 
                <button type="button" className="btn btn-outline-danger btn-sm me-5"  onClick={()=>{handleRemove(cart.id)}}><ImBin/> </button> 
@@ -83,7 +93,7 @@ const Cart = () => {
 
              
           ))  
-          // : <h2>cart is empty</h2>
+        
         }
 
         </div>
@@ -91,7 +101,11 @@ const Cart = () => {
     
                  <h4 className='display-6'>Cart Summary</h4>
                  <hr />
-                 <b>Total Price:353</b>
+                 {
+                  
+
+                 <b>Total Price: {totalPrice}</b>
+                 }    
                </div>
        
       </div>
