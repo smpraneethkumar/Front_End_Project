@@ -66,7 +66,7 @@ const Cart = () => {
 
   return (
     <div className='container'>
-      <div className="row">
+      <div className="row ">
         <div className="col-md-9 ">
          {
           cartData && cartData.map((cart)=>(
@@ -109,7 +109,7 @@ const Cart = () => {
                </div>
        
       </div>
-        <h2>Cart</h2>
+       
 
 
 

@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { products } from './AllData';
 import { FaStar } from 'react-icons/fa';
+import { CiCirclePlus } from "react-icons/ci";
+import { useDispatch } from 'react-redux';
+import { add } from '../Redux/Slice';
+
 
 const Shop = () => {
   const [selectCategory, setSelectCategory] = useState("all");
@@ -11,6 +15,12 @@ const Shop = () => {
   //  if(search.length==products.category){
     
   //  } 
+
+  const dispatch = useDispatch();
+
+  const handleAdd =(item)=>{
+    dispatch(add(item))
+  }
   
   const filterProducts = products.filter((item)=>{
     const drop = selectCategory === "all" ||  item.category === selectCategory;
@@ -23,7 +33,7 @@ const Shop = () => {
    
   return (
     <div>
-      <div className='d-flex justify-content-between  m-3'>
+      <div className='d-flex justify-content-between  m-3 '>
         
         {/* Dropdown */}
         <div className="dropdown">
@@ -70,7 +80,7 @@ const Shop = () => {
                     <FaStar color="gold" />
                     <FaStar color="gold" />
                   </p>
-                  <h2 className="card-text">{item.price}</h2>
+                  <span className='d-flex justify-content-between'> <h2 className="card-text">{item.price}</h2><h1 onClick={()=>{handleAdd(item)}}><CiCirclePlus/></h1> </span> 
                 </div>
               </div>
             </div>
