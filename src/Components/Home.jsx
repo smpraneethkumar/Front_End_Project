@@ -29,31 +29,20 @@ const Home = () => {
         
     }
 
-    // const [userProducts, setUserProducts] = useState(products)
-
-    //  const setUserProducts =function(){
-    //  }
+    
     const newArr = products.filter((ele) =>
         ele.category === "mobile")
 
     const best1 = products.filter((ele) =>
         ele.category === "chair",
-        // ele.category === "sofa"
+      
     )
     const best2 = products.filter((ele) =>
         ele.category === "sofa")
 
     const allBest = [...best2, ...best1]
 
-    // console.log(allBest);
-
-
-    // console.log(best1);
-    // console.log(best2);
-
-
-    //  console.log(newArr);
-    // console.log(discoutProducts);
+   
 
     const settings = {
         dots: false,
@@ -67,9 +56,9 @@ const Home = () => {
     return (
 
         <div  >
+            {/* THE SLIDERS  */}
             <div style={{ backgroundColor: 'whitesmoke' }}>
                 <div className="container" >
-
                     <Slider {...settings}>
                         {
                             SliderData.map((slider) => (
@@ -80,7 +69,7 @@ const Home = () => {
                                         <p className="card-text"><small className="text-body-secondary"><button className='btn btn-secondary'>Visit Collections</button></small></p>
                                     </div>
                                     <div className="col-lg-2">
-
+                                        
                                     </div>
                                     <div className="col-lg-5">
 
@@ -94,7 +83,7 @@ const Home = () => {
 
                 </div>
             </div>
-            {/* the four card  */}
+            {/* THE FOUR CARDS */}
             <div className="container">
                 <div className="row justify-content-center p-2 gap-3 ">
                     <div className="card  " style={{ width: '18rem', textAlign: 'center', padding: '25px', backgroundColor: ' rgb(241, 230, 232)', border: 'none', }}>
@@ -130,7 +119,7 @@ const Home = () => {
                     </div>
                 </div>
             </div> <br /><br />
-            {/* forbigdiscount */}
+            {/* FOR BIG DISCOUNT*/}
             <div className="container" style={{ backgroundColor: 'whitesmoke', padding: '100px' }}>
                 <h1>Big Discount</h1><br />
                 <div className="container">
@@ -162,7 +151,7 @@ const Home = () => {
             </div>
 
 
-            {/* new arrives */}
+            {/* NEW ARRIVES*/}
 
             <div className="container" style={{ padding: '100px' }}>
                 <h1>New Arrival</h1><br />

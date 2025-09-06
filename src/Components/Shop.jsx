@@ -9,19 +9,13 @@ import { add } from '../Redux/Slice';
 const Shop = () => {
   const [selectCategory, setSelectCategory] = useState("all");
   const [search, setSearch]= useState("")
-  // Filtering logic
-  // console.log(search);
-  
-  //  if(search.length==products.category){
-    
-  //  } 
-
+ 
   const dispatch = useDispatch();
 
   const handleAdd =(item)=>{
     dispatch(add(item))
   }
-  
+  // SEARCH INPUT 
   const filterProducts = products.filter((item)=>{
     const drop = selectCategory === "all" ||  item.category === selectCategory;
 
@@ -35,7 +29,7 @@ const Shop = () => {
     <div>
       <div className='d-flex justify-content-between  m-3 '>
         
-        {/* Dropdown */}
+        {/* DROP DOWN */}
         <div className="dropdown">
           <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Filter By Category
@@ -50,7 +44,6 @@ const Shop = () => {
           </ul>
         </div>
 
-    
         <div className="col-sm-5">
           <input
             type="text"
@@ -58,12 +51,11 @@ const Shop = () => {
             placeholder="Search"
             aria-label="Search"
             onChange={(e) => setSearch(e.target.value)}
-            value={search}
-          />
+            value={search} />
         </div>
       </div>
 
-      {/* Products */}
+      {/* ALL PRODUCTS*/}
       <div className="container">
         <div className="row row-cols-1 row-cols-md-3 g-4">
           { 

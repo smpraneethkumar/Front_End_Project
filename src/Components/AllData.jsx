@@ -823,7 +823,7 @@ const AllData = () => {
 
   return (
     <div> 
-        <h2>all data</h2>
+        
     </div>
   )
 }

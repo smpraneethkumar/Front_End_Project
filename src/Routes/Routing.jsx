@@ -4,6 +4,7 @@ import Home from '../Components/Home'
 import Shop from '../Components/Shop'
 import Cart from '../Components/Cart'
 import ProductDetail from '../Components/ProductDetail'
+import Nodatafound from '../Components/Nodatafound'
 
 
 export class Routing extends Component {
@@ -14,7 +15,7 @@ export class Routing extends Component {
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/home/:id' element={<ProductDetail/>}/>
-        {/* <Route path='/pDetail/:id' element={<Cart/>}/> */}
+        <Route path='/*' element={<Nodatafound/>}/>
         
       
       </Routes>

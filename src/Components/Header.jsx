@@ -7,6 +7,7 @@ import { IoMdCart } from 'react-icons/io';
 const Header = () => {
     return (
         <div>
+          {/* THIS NAV BAR  */}
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
    <img src={achieves} alt=""  ></img>

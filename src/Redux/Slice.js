@@ -7,7 +7,6 @@ import { createSlice } from "@reduxjs/toolkit";
     initialState:[],
     reducers :{
         add(state, action){
-            // state.push(action.payload)
         
             const existing = state.find(item=> item.id === action.payload.id)
             if(existing){
@@ -22,10 +21,7 @@ import { createSlice } from "@reduxjs/toolkit";
             
         },
         remove(state, action){
-            // state.push(action.payload)
-
-            // console.log(action);
-            // console.log("this is state"+state);
+          
             return state.filter((products)=>products.id !== action.payload)  
         },
         increment(state,action){
