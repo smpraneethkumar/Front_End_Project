@@ -20,29 +20,29 @@ import { add } from '../Redux/Slice';
 
 const Home = () => {
 
-    const dispatch =useDispatch()
+    const dispatch = useDispatch()
 
-    const handleAdd =(discount)=>{
+    const handleAdd = (discount) => {
         dispatch(add(discount))
 
         console.log(discount);
-        
+
     }
 
-    
+
     const newArr = products.filter((ele) =>
         ele.category === "mobile")
 
     const best1 = products.filter((ele) =>
         ele.category === "chair",
-      
+
     )
     const best2 = products.filter((ele) =>
         ele.category === "sofa")
 
     const allBest = [...best2, ...best1]
 
-   
+
 
     const settings = {
         dots: false,
@@ -69,7 +69,7 @@ const Home = () => {
                                         <p className="card-text"><small className="text-body-secondary"><button className='btn btn-secondary'>Visit Collections</button></small></p>
                                     </div>
                                     <div className="col-lg-2">
-                                        
+
                                     </div>
                                     <div className="col-lg-5">
 
@@ -139,7 +139,7 @@ const Home = () => {
                                                     <FaStar color="gold" />
                                                     <FaStar color="gold" />
                                                 </p>
-                                               <span className='d-flex justify-content-between'> <h2 className="card-text">{discount.price}</h2 > <h1 onClick={()=>{handleAdd(discount)}}><CiCirclePlus/></h1> </span> 
+                                                <span className='d-flex justify-content-between'> <h2 className="card-text">{discount.price}</h2 > <h1 onClick={() => { handleAdd(discount) }}><CiCirclePlus /></h1> </span>
                                             </div>
                                         </div>
                                     </div>
@@ -172,7 +172,7 @@ const Home = () => {
                                                     <FaStar color="gold" />
                                                     <FaStar color="gold" />
                                                 </p>
-                                                 <span className='d-flex justify-content-between'> <h2 className="card-text">{discount.price}</h2><h1 onClick={()=>{handleAdd(discount)}}><CiCirclePlus/></h1> </span> 
+                                                <span className='d-flex justify-content-between'> <h2 className="card-text">{discount.price}</h2><h1 onClick={() => { handleAdd(discount) }}><CiCirclePlus /></h1> </span>
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@ const Home = () => {
             <div className="container" style={{ padding: '100px' }}>
                 <h1>Best Sales</h1> <br />
                 <div className="card-group gap-4">
-<div className="row row-cols-1 row-cols-md-3 g-4">
+                    <div className="row row-cols-1 row-cols-md-3 g-4">
                         {
                             allBest && allBest.map((discount) => (
                                 <Link to={`/home/${discount.id}`} key={discount.id}>
@@ -203,7 +203,7 @@ const Home = () => {
                                                     <FaStar color="gold" />
                                                     <FaStar color="gold" />
                                                 </p>
-                                                 <span className='d-flex justify-content-between'> <h2 className="card-text">{discount.price}</h2><h1 onClick={()=>{handleAdd(discount)}}><CiCirclePlus/></h1> </span> 
+                                                <span className='d-flex justify-content-between'> <h2 className="card-text">{discount.price}</h2><h1 onClick={() => { handleAdd(discount) }}><CiCirclePlus /></h1> </span>
                                             </div>
                                         </div>
                                     </div>

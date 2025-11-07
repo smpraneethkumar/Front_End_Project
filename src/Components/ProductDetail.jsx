@@ -13,12 +13,16 @@ function ProductDetail() {
   const [added, setAdded] = useState(false)
 
   const { id } = useParams()
+  console.log(id);
+  
 
   const [singlePro] = products.filter((ele) =>
     ele.id === id
 
 
   )
+  console.log(singlePro);
+  
   let [{ rating, text }] = singlePro.reviews
 
 
